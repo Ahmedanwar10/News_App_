@@ -1,8 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:news_app_/shared/style/componenets/article_item.dart';
+
+import 'package:news_app_/Api/api_model/sources_model/sources_responce/source.dart';
+import 'package:news_app_/screens/articles/news_list_fragment.dart';
 import 'package:news_app_/shared/style/componenets/tab_item.dart';
 
 class ArticlesScreen extends StatefulWidget {
+  List<Source>? sources;
+  ArticlesScreen(
+    this.sources,
+  );
   @override
   State<ArticlesScreen> createState() => _ArticlesScreenState();
 }
@@ -10,46 +17,38 @@ class ArticlesScreen extends StatefulWidget {
 class _ArticlesScreenState extends State<ArticlesScreen> {
   int selectedIndex = 0;
 
-  List<String> sources = [
-    "BBC News",
-    "CBC News",
-    "ON News",
-    "BEIN News",
-    "SKY News",
-    "AL jazeera News",
-    "Nile News",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: sources.length,
+      length: widget.sources?.length ?? 0,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             TabBar(
-              indicatorColor: Colors.transparent,
-              isScrollable: true,
-                onTap: (index){
+                indicatorColor: Colors.transparent,
+                isScrollable: true,
+                onTap: (index) {
                   selectedIndex = index;
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
-                tabs: sources.map((source)=>TabItem(selectedIndex==sources.indexOf(source), source)).toList()
+                tabs: widget.sources
+                        ?.map((source) => TabItem(
+                            selectedIndex == widget.sources?.indexOf(source),
+                            source))
+                        ?.toList() ??
+                    []),
+            SizedBox(
+              height: 20,
             ),
-            SizedBox(height: 20,),
             Expanded(
-              child: ListView.separated(
-                  padding: EdgeInsets.all(8),
-                  itemBuilder: (context , index)=>ArticleItem(),
-                  separatorBuilder: (context , index)=>SizedBox(
-                    height: 30,
-                  ),
-                itemCount: 5,
-              ),
-            )
+  child: TabBarView(
+    children: widget.sources?.map((source) {
+      return NewsListFragment(sourceId: source.id ?? "");
+    }).toList() ?? [],
+  ),
+)
+
           ],
         ),
       ),

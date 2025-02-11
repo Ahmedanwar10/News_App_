@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_/model/category.dart';
 import 'package:news_app_/screens/articles/articles_screen.dart';
+import 'package:news_app_/screens/home_news_fragmant/home_news_fragmant.dart';
 
 import '../../screens/cateogries_screen/categories_screen.dart';
 import '../../screens/settings/settings_screen.dart';
@@ -17,14 +18,11 @@ class _HomeLayoutState extends State<HomeLayout> {
   bool selectedSettings = false;
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/images/background.jpg"),
-          fit: BoxFit.cover
-        )
-      ),
+          image: DecorationImage(
+              image: AssetImage("assets/images/background.jpg"),
+              fit: BoxFit.cover)),
       child: Scaffold(
         drawer: Drawer(
           child: Column(
@@ -39,15 +37,15 @@ class _HomeLayoutState extends State<HomeLayout> {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   selectedCategory = null;
                   selectedSettings = false;
                   Navigator.pop(context);
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -58,22 +56,22 @@ class _HomeLayoutState extends State<HomeLayout> {
                         width: 10,
                       ),
                       Text(
-                          "Categories",
+                        "Categories",
                         style: Theme.of(context).textTheme.headlineMedium,
                       )
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               InkWell(
-                onTap: (){
+                onTap: () {
                   Navigator.pop(context);
                   selectedSettings = true;
                   selectedCategory = null;
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -84,7 +82,7 @@ class _HomeLayoutState extends State<HomeLayout> {
                         width: 10,
                       ),
                       Text(
-                          "Settings",
+                        "Settings",
                         style: Theme.of(context).textTheme.headlineMedium,
                       )
                     ],
@@ -95,32 +93,33 @@ class _HomeLayoutState extends State<HomeLayout> {
           ),
         ),
         appBar: AppBar(
-          title: Text(
-            selectedCategory == null?selectedSettings?"Settings":"News App":selectedCategory!.title
-          ),
-          actions: selectedCategory==null
-              ?
-          null
-              :
-          [
-            IconButton(
-                onPressed: (){},
-                icon: Icon(
-                  Icons.search_rounded,
-                  size: 40,
-                ))
-          ],
+          title: Text(selectedCategory == null
+              ? selectedSettings
+                  ? "Settings"
+                  : "News App"
+              : selectedCategory!.title),
+          actions: selectedCategory == null
+              ? null
+              : [
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.search_rounded,
+                        size: 40,
+                      ))
+                ],
         ),
-
-        body: selectedCategory==null?selectedSettings?SettingsScreen():CategoriesScreen(SelectCategory):ArticlesScreen(),
+        body: selectedCategory == null
+            ? selectedSettings
+                ? SettingsScreen()
+                : CategoriesScreen(SelectCategory)
+            : HomeNewsFragment(),
       ),
     );
   }
 
-  SelectCategory(CategoryModel category){
+  SelectCategory(CategoryModel category) {
     selectedCategory = category;
-    setState(() {
-
-    });
+    setState(() {});
   }
 }
