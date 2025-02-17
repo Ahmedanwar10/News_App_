@@ -98,10 +98,12 @@ class _HomeLayoutState extends State<HomeLayout> {
     Navigator.pushNamed(context, '/theme'); // التنقل إلى صفحة الثيم
   },
   child: Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding: const EdgeInsets.all(4.0),
     child: Row(
+
       children: [
-        SizedBox(width: 10),
+         Icon(Icons.color_lens,size:35),
+        SizedBox(width: 5),
         Text(
           "Theme",
           style: Theme.of(context).textTheme.headlineMedium,
