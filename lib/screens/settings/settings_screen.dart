@@ -34,7 +34,8 @@ class SettingsScreen extends StatelessWidget {
                   Icons.arrow_drop_down,
                   size: 20,
                   color: Theme.of(context).primaryColor,
-                )
+                ),
+                
               ],
             ),
           )

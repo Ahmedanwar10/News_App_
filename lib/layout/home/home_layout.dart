@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app_/model/category.dart';
 import 'package:news_app_/screens/articles/articles_screen.dart';
 import 'package:news_app_/screens/home_news_fragmant/home_news_fragmant.dart';
+import 'package:news_app_/shared/style/theme/theme_mode.dart';
 
 import '../../screens/cateogries_screen/categories_screen.dart';
 import '../../screens/settings/settings_screen.dart';
@@ -16,6 +17,7 @@ class HomeLayout extends StatefulWidget {
 class _HomeLayoutState extends State<HomeLayout> {
   CategoryModel? selectedCategory;
   bool selectedSettings = false;
+  FinalView? finalView;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -89,6 +91,28 @@ class _HomeLayoutState extends State<HomeLayout> {
                   ),
                 ),
               ),
+            
+               InkWell(
+  onTap: () {
+    Navigator.pop(context); // إغلاق القائمة الجانبية
+    Navigator.pushNamed(context, '/theme'); // التنقل إلى صفحة الثيم
+  },
+  child: Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Row(
+      children: [
+        SizedBox(width: 10),
+        Text(
+          "Theme",
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+      ],
+    ),
+  ),
+),
+
+             
+
             ],
           ),
         ),

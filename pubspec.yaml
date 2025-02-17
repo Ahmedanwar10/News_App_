@@ -33,6 +33,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.0.0
+  hive_ce: ^2.10.1
   http: ^1.3.0
   hydrated_bloc: ^10.0.0
   path: ^1.9.1
