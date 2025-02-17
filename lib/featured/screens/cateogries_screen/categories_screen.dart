@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../model/category.dart';
-import '../../shared/style/componenets/category_item.dart';
+import '../../../model/category.dart';
+import '../../../core/shared/style/componenets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   Function callback;

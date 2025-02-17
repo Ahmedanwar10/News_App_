@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_/Api/api_manager.dart';
-import 'package:news_app_/Api/api_model/everything_model/everything_response/everything_response.dart';
-import 'package:news_app_/shared/style/componenets/article_item.dart';
+import 'package:news_app_/logic/Api/api_manager.dart';
+import 'package:news_app_/logic/Api/api_model/everything_model/everything_response/everything_response.dart';
+import 'package:news_app_/core/shared/style/componenets/article_item.dart';
 class NewsListFragment extends StatelessWidget {
   final String sourceId;
 

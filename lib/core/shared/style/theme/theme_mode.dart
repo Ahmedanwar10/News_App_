@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_/bloc/theme_cubit.dart';
+import 'package:news_app_/logic/bloc/theme_cubit.dart';
 
 class FinalView extends StatelessWidget {
   const FinalView({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_/model/category.dart';
-import 'package:news_app_/screens/articles/articles_screen.dart';
-import 'package:news_app_/screens/home_news_fragmant/home_news_fragmant.dart';
-import 'package:news_app_/shared/style/theme/theme_mode.dart';
+import 'package:news_app_/featured/screens/articles/articles_screen.dart';
+import 'package:news_app_/featured/screens/home_news_fragmant/home_news_fragmant.dart';
+import 'package:news_app_/core/shared/style/theme/theme_mode.dart';
 
-import '../../screens/cateogries_screen/categories_screen.dart';
-import '../../screens/settings/settings_screen.dart';
+import '../screens/cateogries_screen/categories_screen.dart';
+import '../screens/settings/settings_screen.dart';
 
 class HomeLayout extends StatefulWidget {
   static String routeName = "HomeLayout";

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_/bloc/theme_cubit.dart';
-import 'package:news_app_/config/app_theme.dart';
-import 'package:news_app_/layout/home/home_layout.dart';
+import 'package:news_app_/logic/bloc/theme_cubit.dart';
+import 'package:news_app_/core/config/app_theme.dart';
+import 'package:news_app_/featured/home/home_layout.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app_/shared/style/theme/theme_mode.dart';
+import 'package:news_app_/core/shared/style/theme/theme_mode.dart';
 
 
 void main() {

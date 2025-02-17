@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_/Api/api_model/everything_model/everything_response/article.dart';
+import 'package:news_app_/logic/Api/api_model/everything_model/everything_response/article.dart';
 
 class ArticleItem extends StatelessWidget {
   final Article article;

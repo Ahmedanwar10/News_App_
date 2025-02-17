@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_/Api/api_model/sources_model/sources_responce/source.dart';
+import 'package:news_app_/logic/Api/api_model/sources_model/sources_responce/source.dart';
 
 class TabItem extends StatelessWidget {
   bool selected;

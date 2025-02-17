@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_/Api/api_manager.dart';
-import 'package:news_app_/screens/articles/articles_screen.dart';
+import 'package:news_app_/logic/Api/api_manager.dart';
+import 'package:news_app_/featured/screens/articles/articles_screen.dart';
 
 class HomeNewsFragment extends StatelessWidget {
   const HomeNewsFragment({super.key});

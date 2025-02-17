@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import 'package:news_app_/Api/api_model/sources_model/sources_responce/source.dart';
-import 'package:news_app_/screens/articles/news_list_fragment.dart';
-import 'package:news_app_/shared/style/componenets/tab_item.dart';
+import 'package:news_app_/logic/Api/api_model/sources_model/sources_responce/source.dart';
+import 'package:news_app_/featured/screens/articles/news_list_fragment.dart';
+import 'package:news_app_/core/shared/style/componenets/tab_item.dart';
 
 class ArticlesScreen extends StatefulWidget {
   List<Source>? sources;
